@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-    <div class="dark-hero-bg">
-      <p class="dark-hero-text">CHRISTOPHER WARD</p>
-    </div>
     <Header />
     <Content />
     <Footer />

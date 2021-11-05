@@ -1,6 +1,9 @@
 <template>
   <section class="hero">
     <img class="pattern" src="../assets/images/background_pattern.png" alt="" />
+    <div class="dark-hero-bg">
+      <p class="dark-hero-text">CHRISTOPHER WARD</p>
+    </div>
     <div class="card breakpoint-changer">
       <div class="row g-0">
         <div class="col-sm-5 col-9 hero-text">
@@ -54,6 +57,25 @@ export default {
     object-fit: cover;
     height: 700px;
     top: 0;
+  }
+  .dark-hero-bg {
+    background-color: $dark-hero-bg-color;
+    position: absolute;
+    height: 700px;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    overflow: hidden;
+    .dark-hero-text {
+      opacity: 0.2;
+      font-family: $font-black;
+      font-size: 13.75rem;
+      line-height: 11.25rem;
+      color: $maintext-color;
+      text-align: left;
+      margin-top: 200px;
+      margin-left: 65px;
+    }
   }
   .card {
     margin: 0 auto;
