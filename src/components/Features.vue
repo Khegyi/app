@@ -40,9 +40,6 @@
 <script>
 export default {
   name: "Features",
-  props: {
-    blogs: Array,
-  },
   methods: {},
 };
 </script>

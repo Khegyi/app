@@ -37,9 +37,6 @@
 <script>
 export default {
   name: "Hero",
-  props: {
-    blogs: Array,
-  },
   methods: {},
 };
 </script>
