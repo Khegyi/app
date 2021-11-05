@@ -1,0 +1,23 @@
+html {
+  font-size: 16px;
+}
+body {
+  background-color: $bg-color !important;
+}
+.dark-hero-bg {
+  background-color: $dark-hero-bg-color;
+  position: absolute;
+  height: 700px;
+  right: 0;
+  overflow: hidden;
+  .dark-hero-text {
+    opacity: 0.2;
+    font-family: $font-black;
+    font-size: 13.75rem;
+    line-height: 11.25rem;
+    color: $maintext-color;
+    text-align: left;
+    margin-top: 200px;
+    margin-left: 65px;
+  }
+}
