@@ -11,6 +11,8 @@ import Hero from "./Hero";
 import Blogs from "./Blogs";
 import Features from "./Features";
 import axios from "axios";
+import data_backup from "../../public/data/data.json";
+
 export default {
   name: "Header",
   components: {
@@ -31,6 +33,7 @@ export default {
         return data;
       } catch (error) {
         console.log(error);
+        return data_backup;
       }
     },
   },

@@ -5,7 +5,7 @@
       <form @submit.prevent="submit">
         <div class="row">
           <div
-            class="col-sm-12 col-xxl-6 form-group"
+            class="form-group col-sm-12 col-xxl-6"
             :class="{ 'form-group--error': $v.firstName.$error }"
           >
             <input
@@ -19,7 +19,7 @@
             </div>
           </div>
           <div
-            class="col-sm-12 col-xxl-6 form-group"
+            class="form-group col-sm-12 col-xxl-6"
             :class="{ 'form-group--error': $v.lastName.$error }"
           >
             <input
@@ -35,7 +35,7 @@
         </div>
         <div class="row">
           <div
-            class="col form-group"
+            class="form-group col"
             :class="{ 'form-group--error': $v.email.$error }"
           >
             <input
@@ -80,8 +80,9 @@
 <script>
 import Vue from "vue";
 import Vuelidate from "vuelidate";
-Vue.use(Vuelidate);
 import { required, email } from "vuelidate/lib/validators";
+
+Vue.use(Vuelidate);
 
 export default {
   name: "SubscriptionForm",
@@ -107,7 +108,6 @@ export default {
   },
   methods: {
     submit() {
-      console.log("submit!");
       this.$v.$touch();
       if (this.$v.$invalid) {
         this.submitStatus = "ERROR";

@@ -62,13 +62,6 @@ header {
   margin-bottom: 25px;
   nav {
     background-color: #fff;
-    .navbar-brand {
-      margin: 23px 40px;
-      height: 36px;
-      img.logo {
-        height: 36px;
-      }
-    }
     #navbarNav {
       justify-content: flex-end;
       ul.navbar-nav {

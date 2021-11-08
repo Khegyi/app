@@ -15,7 +15,7 @@
       .navbar-brand {
         margin: 15px 20px;
         height: 26px;
-        object {
+        img.logo {
           height: 26px;
         }
       }
@@ -24,6 +24,7 @@
   .content {
     .hero {
       .card {
+        margin: 42px 0;
         .hero-text {
           .card-body {
             min-height: 220px;
@@ -65,6 +66,8 @@
     .features {
       .row.wrap {
         .feature {
+          padding: 45px 0 37px;
+          margin: 0;
           &:first-child {
             border-right: 1px solid rgba($link-color, 0.2);
             border-bottom: 1px solid rgba($link-color, 0.2);
@@ -75,6 +78,10 @@
           &:nth-child(3) {
             border-right: 1px solid rgba($link-color, 0.2);
           }
+          label {
+            font-size: 0.88rem;
+            line-height: 1.13rem;
+          }
         }
       }
     }
@@ -84,15 +91,42 @@
         padding: 0 20px;
         .card {
           margin-bottom: 20px;
+          .card-content {
+            .card-body {
+              .card-title {
+                color: $subtext-color;
+                font-family: $font-bold;
+                font-size: 0.88rem;
+                line-height: 1.5rem;
+              }
+            }
+            .card-footer {
+              padding: 20px;
+              a.nav-link {
+                font-size: 0.88rem;
+                line-height: 1.13rem;
+              }
+            }
+          }
         }
       }
     }
   }
-}
-footer {
-  h4,
-  .link-collections {
-    text-align: center;
+  footer {
+    h4,
+    .link-collections {
+      text-align: center;
+    }
+    .subscription {
+      .subscribe-form {
+        form {
+          .form-group {
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -101,7 +135,17 @@ footer {
   .dark-hero-bg {
     width: calc(50% - 150px);
   }
-
+  header {
+    nav {
+      .navbar-brand {
+        margin: 23px 40px;
+        height: 36px;
+        img.logo {
+          height: 36px;
+        }
+      }
+    }
+  }
   .content {
     .hero {
       .card {
@@ -114,6 +158,8 @@ footer {
     .features {
       .row.wrap {
         .feature {
+          padding: 45px 0 37px;
+          margin: 0;
           &:first-child {
             border-right: 1px solid rgba($link-color, 0.2);
             border-bottom: 1px solid rgba($link-color, 0.2);
@@ -137,11 +183,11 @@ footer {
       }
     }
   }
-}
-footer {
-  h4,
-  .link-collections {
-    text-align: center;
+  footer {
+    h4,
+    .link-collections {
+      text-align: center;
+    }
   }
 }
 
@@ -161,8 +207,18 @@ footer {
       }
     }
     .features {
-      .feature {
-        border-right: 1px solid rgba($link-color, 0.2);
+      .row.wrap {
+        .feature {
+          &:first-child {
+            border-bottom: none;
+          }
+          &:nth-child(2) {
+            border-bottom: none;
+          }
+          margin: 45px 0 37px;
+          padding: 0;
+          border-right: 1px solid rgba($link-color, 0.2);
+        }
       }
     }
     .blogs {
