@@ -80,42 +80,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4 col-sm-12 subscribtion">
-        <div class="subscribe-form">
-          <h4>Subscribe to the newsletter</h4>
-          <form>
-            <div class="row">
-              <div class="col-sm-12 col-xxl-6">
-                <input type="text" id="first_name" placeholder="First name" />
-              </div>
-              <div class="col-sm-12 col-xxl-6">
-                <input type="text" id="last_name" placeholder="Last name" />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <input type="email" id="email" placeholder="Email" />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <input
-                  @click="onSubmit"
-                  class="btn btn-primary"
-                  id="subscribe_btn"
-                  type="submit"
-                  value="Subscribe"
-                />
-              </div>
-            </div>
-            <div class="row">
-              <div class="col">
-                <p class="error-message"></p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+      <SubscriptionForm />
     </div>
     <div id="scroll-top" class="row mx-0 lifter">
       <div class="col">
@@ -134,26 +99,17 @@
 
 <script>
 import $ from "jquery";
+import SubscriptionForm from "./SubscriptionForm.vue";
+
 export default {
   name: "Footer",
-  props: {
-    msg: String,
+  components: {
+    SubscriptionForm,
   },
   methods: {
     scrollTop(e) {
       e.preventDefault();
       $(document).scrollTop(0);
-    },
-    onSubmit(e) {
-      e.preventDefault();
-      const firstName = $("#first_name").val();
-      const lastName = $("#last_name").val();
-      const email = $("#email").val();
-      if (firstName !== "" && lastName !== "" && email !== "") {
-        $(".error-message").text("").hide();
-      } else {
-        $(".error-message").text("All field must be filled out!").show();
-      }
     },
   },
 };
@@ -162,6 +118,34 @@ export default {
 <style lang="scss" scoped>
 @import "../styles/colors.scss";
 @import "../styles/fonts.scss";
+
+@keyframes shakeError {
+  0% {
+    transform: translateX(0);
+  }
+  15% {
+    transform: translateX(0.375rem);
+  }
+  30% {
+    transform: translateX(-0.375rem);
+  }
+  45% {
+    transform: translateX(0.375rem);
+  }
+  60% {
+    transform: translateX(-0.375rem);
+  }
+  75% {
+    transform: translateX(0.375rem);
+  }
+  90% {
+    transform: translateX(-0.375rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 footer {
   padding-top: 40px;
   background-color: #fff;
@@ -191,59 +175,6 @@ footer {
                 color: $link-color;
               }
             }
-          }
-        }
-      }
-    }
-    .subscribtion {
-      .subscribe-form {
-        h4 {
-          margin-bottom: 20px;
-        }
-        form {
-          input {
-            width: 100%;
-            transition: box-shadow 0.5s;
-            &:focus {
-              box-shadow: 2px 2px 3px #2929296e;
-            }
-            &:focus-visible {
-              border-radius: 0;
-              outline: 0px solid $main-color;
-            }
-            &[type="text"],
-            &[type="email"] {
-              border: 1px solid $input-border-color;
-              font-family: $font-regular;
-              font-size: 0.88rem;
-              line-height: 1.13rem;
-              padding: 12px 16px;
-              margin-bottom: 20px;
-            }
-            &::placeholder {
-              color: $input-placeholder-color;
-              font-family: $font-regular;
-              font-size: 0.88rem;
-              line-height: 1.13rem;
-            }
-          }
-
-          .btn {
-            border-radius: 0;
-            border: 0;
-            background-color: #000;
-            font-family: $font-semibold;
-            font-size: 1rem;
-            line-height: 1.75rem;
-            &:hover {
-              background-color: $main-color;
-            }
-          }
-          .error-message {
-            display: none;
-            margin: 15px 0;
-            font-family: $font-semibold;
-            color: $error-color;
           }
         }
       }
